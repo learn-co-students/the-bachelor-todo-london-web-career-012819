@@ -10,9 +10,9 @@ return first_name
 end
 
 def get_contestant_name(data, occupation)
-  first_name = ""
+  name = ""
     data.each do |attribute|
-          #binding.pry
+          binding.pry
          if attribute["occupation"] == occupation
            name = attribute["name"]
          end
