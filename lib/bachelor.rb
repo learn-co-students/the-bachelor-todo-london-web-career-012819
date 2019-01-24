@@ -1,9 +1,23 @@
+require"pry"
 def get_first_name_of_season_winner(data, season)
-  # code here
+first_name = ""
+  data[season].each do |attribute|
+       if attribute["status"] == "Winner"
+         first_name = attribute["name"].split.first
+       end
+         end
+return first_name
 end
 
 def get_contestant_name(data, occupation)
-  # code here
+  first_name = ""
+    data.each do |attribute|
+          #binding.pry
+         if attribute["occupation"] == occupation
+           name = attribute["name"]
+         end
+           end
+  return name
 end
 
 def count_contestants_by_hometown(data, hometown)
