@@ -18,17 +18,45 @@ def get_contestant_name(data, occupation)
         end
       end
     end
-  return name
+return name
 end
 
 def count_contestants_by_hometown(data, hometown)
-  # code here
+  counter = 0
+    data.each do |k, v|
+      v.each do |attribute|
+        if attribute["hometown"] == hometown
+        counter += 1
+        else
+        counter
+        end
+      end
+    end
+return counter
 end
 
 def get_occupation(data, hometown)
-  # code here
+    data.each do |k, v|
+      v.each do |attribute|
+        if attribute["hometown"] == hometown
+      return attribute["occupation"]
+        end
+      end
+    end
 end
 
 def get_average_age_for_season(data, season)
-  # code here
+  age_array = []
+  int_array = []
+  sum = 0
+    data[season].each do |attribute|
+        age_array << attribute["age"]
+    end
+    #binding.pry
+      age_array.each do |n|
+        int_array << n.to_i
+      end
+  int_array.each {|n| sum += n}
+  #binding.pry
+  return (sum / int_array.size.to_f).round(0)
 end
