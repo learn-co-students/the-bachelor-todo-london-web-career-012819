@@ -11,12 +11,13 @@ end
 
 def get_contestant_name(data, occupation)
   name = ""
-    data.each do |attribute|
-          binding.pry
-         if attribute["occupation"] == occupation
-           name = attribute["name"]
-         end
-           end
+    data.each do |k, v|
+      v.each do |attribute|
+        if attribute["occupation"] == occupation
+        name = attribute["name"]
+        end
+      end
+    end
   return name
 end
 
